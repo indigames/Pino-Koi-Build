@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Pino-Koi</title>
+	</head>
+	<body style="text-align: center;" >
+		<div id="bg-layer" class="abs">
+			<div id="bg-offset">
+			</div>
+		</div>
+		
+		<div id="canvas-layer" class="abs">
+			<div id="canvas-offset">
+				<canvas id="unity-canvas" width=1080 height=1920 style="width: 100%;"></canvas>
+			</div>
+		</div>
+		
+		<script src="Build/BeforeUnity.js"></script>
+		<script src="stub/stub.js"></script>
+		<script src="Build/Pino-Koi-Build.loader.js"></script>
+		
+		<script>
+			createUnityInstance(
+				document.querySelector("#unity-canvas"),
+				{
+					dataUrl: "Build/Pino-Koi-Build.data",
+					frameworkUrl: "Build/Pino-Koi-Build.framework.js",
+					codeUrl: "Build/Pino-Koi-Build.wasm",
+					streamingAssetsUrl: "StreamingAssets",
+					companyName: "DefaultCompany",
+					productName: "Pino-Koi",
+					productVersion: "1.0",
+					matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+					// devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+				}
+			);
+		</script>
+	</body>
+</html>
